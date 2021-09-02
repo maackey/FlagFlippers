@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Flag.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 10.0
+
+[node name="FlagArea" type="Area"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Flag" parent="." instance=ExtResource( 1 )]
