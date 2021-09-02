@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Level" type="CSGCylinder"]
+use_collision = true
+radius = 100.0
+height = 10.0
+sides = 64
+
+[node name="Ramp" type="CSGBox" parent="."]
+transform = Transform( 0.923879, -0.382683, 0, 0.382683, 0.923879, 0, 0, 0, 1, -22, 0, 0 )
+width = 30.0
+height = 20.0
+depth = 20.0
+
+[node name="Ramp2" type="CSGBox" parent="."]
+transform = Transform( -0.923879, 0.382683, -8.74228e-08, 0.382683, 0.923879, 0, 8.07681e-08, -3.34552e-08, -1, 22, 0, 0 )
+width = 30.0
+height = 20.0
+depth = 20.0
+
+[node name="PitCentral" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, 9.53674e-07, 0 )
+operation = 2
+radius = 12.0
+height = 50.0
+sides = 64

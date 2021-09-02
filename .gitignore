@@ -1,0 +1,7 @@
+android/
+release/
+.import/
+.mono/
+**/*.import
+**/*.db
+configs.json
