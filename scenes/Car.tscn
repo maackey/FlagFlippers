@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://materials/HoverLeg.phymat" type="PhysicsMaterial" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.5, 1, 2.5 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 3, 2, 5 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.2
+
+[node name="Car" type="Spatial"]
+
+[node name="CarBody" type="RigidBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="CarBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CarBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="CarBody"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 9 )
+current = true
+
+[node name="FL" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -2, -2.5 )
+mass = 0.1
+physics_material_override = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FL"]
+shape = SubResource( 3 )
+
+[node name="FL_6DOF" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, -2.5 )
+nodes/node_a = NodePath("../CarBody")
+nodes/node_b = NodePath("../FL")
+linear_limit_x/softness = 0.01
+linear_limit_x/restitution = 0.01
+linear_limit_y/enabled = false
+linear_spring_y/enabled = true
+linear_spring_y/stiffness = 10.0
+linear_spring_y/damping = 1.0
+linear_limit_z/softness = 0.01
+linear_limit_z/restitution = 0.01
+
+[node name="FR" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -2, -2.5 )
+mass = 0.1
+physics_material_override = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FR"]
+shape = SubResource( 3 )
+
+[node name="FR_6DOF" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -2.5 )
+nodes/node_a = NodePath("../CarBody")
+nodes/node_b = NodePath("../FR")
+linear_limit_x/softness = 0.01
+linear_limit_x/restitution = 0.01
+linear_limit_y/enabled = false
+linear_spring_y/enabled = true
+linear_spring_y/stiffness = 10.0
+linear_spring_y/damping = 1.0
+linear_limit_z/softness = 0.01
+linear_limit_z/restitution = 0.01
+
+[node name="RL" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -2, 2.5 )
+mass = 0.1
+physics_material_override = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RL"]
+shape = SubResource( 3 )
+
+[node name="RL_6DOF" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, 2.5 )
+nodes/node_a = NodePath("../CarBody")
+nodes/node_b = NodePath("../RL")
+linear_limit_x/softness = 0.01
+linear_limit_x/restitution = 0.01
+linear_limit_y/enabled = false
+linear_spring_y/enabled = true
+linear_spring_y/stiffness = 10.0
+linear_spring_y/damping = 1.0
+linear_limit_z/softness = 0.01
+linear_limit_z/restitution = 0.01
+
+[node name="RR" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -2, 2.5 )
+mass = 0.1
+physics_material_override = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RR"]
+shape = SubResource( 3 )
+
+[node name="RR_6DOF" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, 2.5 )
+nodes/node_a = NodePath("../CarBody")
+nodes/node_b = NodePath("../RR")
+linear_limit_x/softness = 0.01
+linear_limit_x/restitution = 0.01
+linear_limit_y/enabled = false
+linear_spring_y/enabled = true
+linear_spring_y/stiffness = 10.0
+linear_spring_y/damping = 1.0
+linear_limit_z/softness = 0.01
+linear_limit_z/restitution = 0.01
