@@ -15,11 +15,10 @@ run/main_scene="res://scenes/Level.tscn"
 boot_splash/image="res://textures/none.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.png"
 
 [autoload]
 
-Server="*res://scenes/Server.tscn"
+Server="*res://scenes/Server.gd"
 
 [input]
 
