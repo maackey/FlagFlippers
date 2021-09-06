@@ -25,7 +25,6 @@ material/0 = null
 
 [node name="Camera" type="Camera" parent="CarBody"]
 transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 9 )
-current = true
 
 [node name="FL" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1, -2.5 )

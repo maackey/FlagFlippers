@@ -24,3 +24,14 @@ func _on_Host_pressed() -> void:
 func _on_Join_pressed() -> void:
 	Server.startclient()
 	pass # Replace with function body.
+
+
+func _on_Start_pressed() -> void:
+	Server.startgame()
+	pass # Replace with function body.
+
+
+func _on_Disconnect_pressed() -> void:
+	(get_tree().network_peer as NetworkedMultiplayerENet).close_connection()
+	get_tree().network_peer = null
+	pass # Replace with function body.

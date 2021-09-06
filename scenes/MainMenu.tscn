@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
 
-[node name="Control" type="Control"]
+[node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -30,5 +30,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Start" type="Button" parent="."]
+margin_left = 316.0
+margin_top = 241.0
+margin_right = 357.0
+margin_bottom = 261.0
+text = "Start"
+
+[node name="Disconnect" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Disconnect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Host" to="." method="_on_Host_pressed"]
 [connection signal="pressed" from="Join" to="." method="_on_Join_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Disconnect" to="." method="_on_Disconnect_pressed"]
